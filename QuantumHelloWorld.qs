@@ -4,20 +4,20 @@
 // This Q# code generates a random bit by setting a qubit in a superposition of
 // the computational basis states |0〉 and |1〉, and returning the measurement result.
 namespace QuantumHelloWorld {
-    @Entrypoint()
+    @EntryPoint()
     operation RandomBit(): Result {
         Message("Hello World");
 
-        use qbit = QuBit();
+        use qbit = Qubit();
 
         // Set the qubit in superposition by applying a Hadamard transformation.
-        H(qubit);
+        H(qbit);
 
         // Measure the qubit. There is a 50% probability of measuring either 'Zero' or 'One'.
-        let result = M(qubit);
+        let result = M(qbit);
 
         // Reset the qubit so it can be safely released.
-        Reset(qubit);
+        Reset(qbit);
         return result;
     }
 }
