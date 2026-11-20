@@ -212,9 +212,7 @@ M =
 \end{bmatrix}
 $$
 
-Aplicamos a operação de inverter o bit multiplicando a matriz $M$ pelo vetor que representa o estado: 
-
-$$v\longrightarrow Mv$$
+Aplicamos a operação de inverter o bit multiplicando a matriz $M$ pelo vetor que representa o estado: $v\longrightarrow Mv$
 
 Por exemplo, para o estado zero
 
@@ -311,9 +309,94 @@ $$
 
 Ou seja, quando aplicamos a matriz ao vetor de um estado, obtemos exatamente o vetor do estado transformado.
 
+**Operações probabilísticas**
 
+São operações clássicas que introduzem incerteza ou aleatoriedade.
+
+Exemplo: Se o estado for 0, faça nada, caso for 1, inverta o bit com probabilidade de 1/2 ou 50%.
+
+$$
+M=
+\begin{bmatrix}
+1&\frac{1}{2}\\
+0&\frac{1}{2}
+\end{bmatrix}
+$$
+
+Perceba que cada coluna representa a distribuição de probabilidades do resultado para um determinado estado inicial.
+
+**Matrizes estatocásticas**
+
+> [!NOTE]
+> As matrizes estatocásticas possuem duas propriedades:
+> Todas entradas são números reais não negativos
+> A soma das entradas de cada coluna é igual a 1
+
+**Composição de operações**
+
+Considere $X$ e matrizes estatocásticas $M_1, M_2, \ldots, M_n$, que representam operações probabilísticas sobre esse sistema.
+
+Quando aplicamos essas operações na ordem $M_1, M_2, \ldots, M_n$, a operação composta é representada pelo produto:
+
+$$
+M_n \cdots M_2 M_1
+$$
+
+> [!WARNING]
+> A ordem da multiplicação é importante, pois a multiplicação de matrizes não é comutativa.
+
+Isso significa que, em geral:
+
+$$
+M_2M_1 \neq M_1M_2
+$$
 
 ## Informação quântica
+
+Um estado quântico é representado por um vetor coluna cujo os índices correspondem aos estados clássicos de um sistema.
+
+Existem duas propriedades fundamentais:
+
+1. As entradas do vetor são números complexos
+2. A soma dos quadrados das entradas do módulos das entradas deve ser igual a 1
+
+Um estado quântico precisa ser um vetor unitário segunda a norma euclidiana.
+
+**Norma euclidiana**
+
+Para um vetor complexto:
+
+$$
+v =
+\begin{bmatrix}
+\alpha_1\\
+\vdots\\
+\alpha_n
+\end{bmatrix}
+$$
+
+Sua norma é definida por:
+
+$$
+\|v\| =
+\sqrt{\sum_{k=1}^{n}|\alpha_k|^2}
+$$
+
+Significado dos elementos:
+- $v$: vetor que representa o estado.
+- $\alpha_k$: entrada de índice $k$, que pode ser um número complexo.
+- $|\alpha_k|$: módulo do número complexo.
+- $|\alpha_k|^2$: módulo ao quadrado
+- $n$: quantidade de entradas do vetor.
+- $\|v\|$: norma do vetor.
+
+$$
+\sum_{k=1}^{n}|\alpha_k|^2=1
+$$
+
+$$
+\|v\|=1
+$$
 
 Na informação quântica existe o conceito de superposição. Um qubit pode ser representado por uma combinação linear de estados:
 
