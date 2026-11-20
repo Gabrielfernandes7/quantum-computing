@@ -212,12 +212,14 @@ M =
 \end{bmatrix}
 $$
 
-Aplicamos a operação de inverter o bit multiplicando a matriz $M$ pelo vetor que representa o estado: $v\longrightarrow Mv$
+Aplicamos a operação de inverter o bit multiplicando a matriz $M$ pelo vetor que representa o estado: 
 
-Por exemplo, para o estado zero:
+$$v\longrightarrow Mv$$
+
+Por exemplo, para o estado zero
 
 $$
-M|0\rangle =
+M|0 \rangle =
 \begin{bmatrix}
 0 & 1 \\
 1 & 0
@@ -235,6 +237,81 @@ M|0\rangle =
 $$
 
 Isso ocorre porque o estado 0 foi transformado no estado 1.
+
+**Produto externo:**
+
+Quando vimos sobre produtos de ket por bra vimo que o resultado é uma matriz:
+
+$$
+|0\rangle\langle0|=
+\begin{bmatrix}
+1&0\\
+0&0
+\end{bmatrix}
+$$
+
+$$
+|0\rangle\langle1|=
+\begin{bmatrix}
+0&1\\
+0&0
+\end{bmatrix}
+$$
+
+$$
+|1\rangle\langle0|=
+\begin{bmatrix}
+0&0\\
+1&0
+\end{bmatrix}
+$$
+
+$$
+|1\rangle\langle1|=
+\begin{bmatrix}
+0&0\\
+0&1
+\end{bmatrix}
+$$
+
+A regra geral apresentada é:
+
+$$
+M =
+|a\rangle\langle b|
+$$
+
+Perceba que, se assumimos que a é linha e b é coluna, conseguimos saber exatamente onde encontrar o nosso 1 na matriz. Exemplo: se $|0\rangle\langle 1|$ temos algo como: $M01$, ou seja, na posição 01 da matriz encontramos o nosso 1.
+
+**Represntação matricial de operações determinísticas**
+
+Retomando o conceito anterior, uma função determinística transforma um estado em outro:
+
+$$
+f:\Sigma\rightarrow\Sigma
+$$
+
+A matriz que representa essa expressão pode ser construída pela operação:
+
+$$
+M=\sum_{b\in\Sigma}|f(b)\rangle\langle b|
+$$
+
+- $M$: matriz que representa a operação.
+- $\sum$: soma dos termos
+- $b\in\Sigma$: percorremos todos os estados possíveis.
+- $|f(b)\rangle$: estado resultante da transformação.
+- $\langle b|$: identifica o estado de entrada.
+
+Propriedade importante:
+
+$$
+M|a\rangle=|f(a)\rangle
+$$
+
+Ou seja, quando aplicamos a matriz ao vetor de um estado, obtemos exatamente o vetor do estado transformado.
+
+
 
 ## Informação quântica
 
